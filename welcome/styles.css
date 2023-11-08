@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css?family=Star+Jedi&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: auto; /* Позволяет странице прокручиваться */
+}
+
+
+.stars {
+    position: fixed; /* Возвращаем fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(black, #250303, black);
+    z-index: -1;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    width: 1px; /* Уменьшен размер звёзд */
+    height: 1px; /* Уменьшен размер звёзд */
+    animation: twinkle 10s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#contactBar {
+    position: fixed;
+    bottom: 0; /* Переместить нижний навбар вниз */
+    width: 100%;
+    background: #343a40;
+    z-index: 2;
+    display: block;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.3s, transform 1.3s;
+}
+
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}
+
+#contactBar.fade-out {
+    animation: fade-out 2.5s ease forwards;
+}
+
+/* Add these styles to your CSS to move the form to the top right */
+.contact-form {
+    position: absolute;
+    top: 80px;
+    right: 10px;
+}
+
+#userContactForm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+#closeContactFormButton {
+    position: absolute;
+    top: 96px;
+    right: 167px;
+    width: 40px;
+}
+
+/* Adjust the size of the input fields */
+.form-control {
+    width: 150px;
+}
+
+#myNavbar a.navbar-brand,
+#myNavbar .navbar-nav .nav-link {
+    background-image: linear-gradient(45deg, #d9be80, #FF8E33);
+    -webkit-background-clip: text; /* For Webkit browsers */
+    background-clip: text;
+    color: transparent;
+}
+
+#myNavbar .navbar-brand img {
+    margin-right: 20px; /* Adjust the margin to control the space between the image and text */
+}
+
+
+.welcome-text {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.gold-gradient {
+    background: linear-gradient(#FFD700, #D4AF37, transparent);
+    -webkit-background-clip: text;
+    color: transparent;
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%; /* Ширина текста теперь 100% от контейнера */
+    max-width: 1200px; /* Максимальная ширина ограничена для крупных экранов */
+    margin: 0 auto; /* Автоматические отступы для центрирования */
+    position: relative; /* Изменено позиционирование на относительное */
+    font-family: 'Georgia', sans-serif;
+    text-align: center; /* Выравнивание текста по центру */
+    top: 300px;
+}
+
+#movable-text h1 {
+    font-size: 45px; /* Измените размер заголовка h1 по вашему усмотрению */
+}
+
+#movable-text h4 {
+    font-size: 10px; /* Измените размер заголовка h4 по вашему усмотрению */
+}
+
+#movable-text i {
+    font-size: 20px; /* Измените размер текста внутри элемента i по вашему усмотрению */
+}
+
+.yoda-container {
+    left: 100px;
+    top: 700px;
+    position: relative; /* Контейнер относительно позиционирован */
+    width: 1700px; /* Ширина контейнера */
+    height: 600px; /* Высота контейнера */
+    overflow: hidden; /* Скрывает части изображения, выходящие за пределы контейнера */
+}
+
+.yoda-container img {
+    width: 100%; /* Ширина изображения равна ширине контейнера */
+    height: 100%; /* Высота изображения равна высоте контейнера */
+    object-fit: cover; /* Обрезает изображение, сохраняя пропорции */
+}
+
+#rbt img {
+    position: relative; /* Меняем значение на relative, absolute или другое в зависимости от ваших потребностей */
+    top: 900px; /* Регулируйте значение, чтобы переместить изображение вертикально */
+    left: 1100px; /* Регулируйте значение, чтобы переместить изображение горизонтально */
+}
+
+.nav-item {
+    margin-right: 20px; /* Расстояние между вкладками */
+}
+
+.nav-link {
+    color: #cca53a; /* Цвет текста вкладок */
+    font-size: 18px; /* Размер текста вкладок */
+}
+
+.nav-link:hover {
+    color: #ffa500; /* Цвет текста вкладки при наведении */
+}
+#yoda {
+    display: inline-block; /* Делаем контейнер блочным и обтекаемым */
+    padding: 10px; /* Отступ от изображения */
+    border: 1px solid #7a6a2c; /* Тонкая рамка золотого цвета */
+}
+
+
+.scroll-fade-in.active {
+    opacity: 1;
+    transform: translateY(0); /* Возврат к изначальной позиции */
+}
+
+.text-fade-in {
+    opacity: 1; /* Устанавливаем начальную видимость текста */
+    transform: translateY(0);
+    transition: opacity 1s; /* Плавное появление с анимацией длительностью 0.5 секунды */
+}
+
+.scroll-fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 6s, transform 1s; /* Увеличьте продолжительность анимации до 2 секунд */
+}
+
+.gold-line {
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(45deg, #FFD700, #D4AF37);
+    position: absolute; /* Изменяет позиционирование элемента */
+    top: 800px; /* Регулирует вертикальное положение линии от верхней грани */
+    left: 200px; /* Регулирует горизонтальное положение линии от левой грани */
+}
+
+.custom-text {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 40px;
+    margin-left: 15%;
+    margin-right: 20%;
+    max-width: 700px; /* Максимальная ширина текста */
+    max-height: 600px; /* Максимальная высота текста */
+    overflow: hidden; /* Скрывает текст, выходящий за пределы блока */
+    background: linear-gradient(#FFD700, #D4AF37, transparent);
+    -webkit-background-clip: text;
+    color: transparent;
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%; /* Ширина текста теперь 100% от контейнера */
+    position: relative; /* Изменено позиционирование на относительное */
+    font-family: 'Georgia', sans-serif;
+    /* Выравнивание текста по центру */
+    top: 300px;
+}
+
+#fon img {
+    position: relative; /* Меняем значение на relative, absolute или другое в зависимости от ваших потребностей */
+    top: 700px; /* Регулируйте значение, чтобы переместить изображение вертикально */
+    left: 325px; /* Регулируйте значение, чтобы переместить изображение горизонтально */
+}
+
+.quiz {
+    font-size: 30px;
+    text-align: center;
+    margin-top: -20px;
+    margin-left: 32%;
+    margin-right: 30%;
+    max-width: 700px; /* Максимальная ширина текста */
+    max-height: 600px; /* Максимальная высота текста */
+    overflow: hidden; /* Скрывает текст, выходящий за пределы блока */
+    background: linear-gradient(#c9c7be, #ffffff, transparent);
+    -webkit-background-clip: text;
+    color: transparent;
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%; /* Ширина текста теперь 100% от контейнера */
+    position: relative; /* Изменено позиционирование на относительное */
+    font-family: 'Georgia', sans-serif;
+    /* Выравнивание текста по центру */
+    top: 300px;
+}
+
+#quizbut {
+    opacity: 1; /* Значение может быть от 0 (полностью прозрачная) до 1 (полностью непрозрачная) */
+}
+
+#contactFormContainer {
+    /* Other styles... */
+    background: linear-gradient(#543739, #1f0707, transparent);
+    padding: 20px;
+}

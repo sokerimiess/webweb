@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <title>Звездные Войны Квиз</title>
+</head>
+<body>
+<nav class="navbar fixed-top" id="myNavbar" style="background-color: transparent; transition: background-color 0.3s; font-family: 'Georgia', serif; padding: 20px; height: 100px;">
+    <div class="container">
+        <a class="navbar-brand" href="../welcome/index.html">STAR WARS</a>
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="../forces/index.html" style="color: #c99248;">Forces</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="../test/index.html" style="color: #c99248;">Test</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="index.html" style="color: #c99248;">Quiz</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../rewards/index.html" style="color: #c99248;">Rewards</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../buy/buy.html" style="color: #c99248;">Tickets</a>
+            </li>
+        </ul>
+        <button id="showContactFormButton" class="btn btn-light" style="background: url('../tools/Frame 3.svg') no-repeat center center; background-size: 50% auto; border: none; color: transparent; padding: 15px 120px; font-size: 18px;">Sign-up</button>
+    </div>
+</nav>
+
+<div class="stars"></div>
+
+<div class="quiz-container">
+    <h1>Квиз по Звездным Войнам</h1>
+    <form id="quiz-form">
+        <div class="question">
+            <p>1. Какой цвет световых мечей использует Ситх?</p>
+            <label><input type="radio" name="q1" value="a"> Красный</label>
+            <label><input type="radio" name="q1" value="b"> Синий</label>
+            <label><input type="radio" name="q1" value="c"> Зеленый</label>
+        </div>
+        <div class="question">
+            <p>2. Кто был учеником Оби-Вана Кеноби?</p>
+            <label><input type="radio" name="q2" value="a"> Анакин Скайуокер</label>
+            <label><input type="radio" name="q2" value="b"> Люк Скайуокер</label>
+            <label><input type="radio" name="q2" value="c"> Яраел Пооф</label>
+        </div>
+        <div class="question">
+            <p>3. Какое имя у принцессы Леи?</p>
+            <label><input type="radio" name="q3" value="a"> Лия Органа</label>
+            <label><input type="radio" name="q3" value="b"> Лея Скайуокер</label>
+            <label><input type="radio" name="q3" value="c"> Лея Падме Амидала</label>
+        </div>
+        <div class="question">
+            <p>4. Какое имя у дроид-пилота Фалькона Миллениума?</p>
+            <label><input type="radio" name="q4" value="a"> C-3PO</label>
+            <label><input type="radio" name="q4" value="b"> R2-D2</label>
+            <label><input type="radio" name="q4" value="c"> BB-8</label>
+        </div>
+        <div class="question">
+            <p>5. Какая планета была разрушена Звездой Смерти?</p>
+            <label><input type="radio" name="q5" value="a"> Альдераан</label>
+            <label><input type="radio" name="q5" value="b"> Татуин</label>
+            <label><input type="radio" name="q5" value="c"> Эндор</label>
+        </div>
+        <div class="question">
+            <p>6. Какое имя у великого мастера джедаев, обучавшего Люка Скайуокера?</p>
+            <label><input type="radio" name="q6" value="a"> Йода</label>
+            <label><input type="radio" name="q6" value="b"> Мейс Винду</label>
+            <label><input type="radio" name="q6" value="c"> Квай-Гон Джин</label>
+        </div>
+        <div class="question">
+            <p>7. Какое оружие использовал Хан Соло?</p>
+            <label><input type="radio" name="q7" value="a"> Световой меч</label>
+            <label><input type="radio" name="q7" value="b"> Бластер</label>
+            <label><input type="radio" name="q7" value="c"> Лазерная винтовка</label>
+        </div>
+        <div class="question">
+            <p>8. Кто был главным злодеем в исходной трилогии Звездных Войн?</p>
+            <label><input type="radio" name="q8" value="a"> Дарт Вейдер</label>
+            <label><input type="radio" name="q8" value="b"> Джабба Де Хат</label>
+            <label><input type="radio" name="q8" value="c"> Палпатин</label>
+        </div>
+        <input type="submit" value="Проверить ответы">
+    </form>
+</div>
+
+<div id="result-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="close-result-modal">&times;</span>
+        <h2>Ваш результат:</h2>
+        <p id="score">0 / 8</p>
+        <button id="show-answers">Показать правильные ответы</button>
+    </div>
+</div>
+
+<div id="answers-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="close-answers-modal">&times;</span>
+        <h2>Правильные ответы:</h2>
+        <ul>
+            <li>1. Какой цвет световых мечей использует Ситх? - Красный (a)</li>
+            <li>2. Кто был учеником Оби-Вана Кеноби? - Анакин Скайуокер (a)</li>
+            <li>3. Какое имя у принцессы Леи? - Лия Органа (a)</li>
+            <li>4. Какое имя у дроид-пилота Фалькона Миллениума? - R2-D2 (b)</li>
+            <li>5. Какая планета была разрушена Звездой Смерти? - Альдераан (a)</li>
+            <li>6. Какое имя у великого мастера джедаев, обучавшего Люка Скайуокера? - Йода (a)</li>
+            <li>7. Какое оружие использовал Хан Соло? - Бластер (b)</li>
+            <li>8. Кто был главным злодеем в исходной трилогии Звездных Войн? - Дарт Вейдер (a)</li>
+        </ul>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

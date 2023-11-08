@@ -1,0 +1,201 @@
+<html>
+<head>
+<title>styles.css</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #d5b778;}
+.s3 { color: #bcbec4;}
+.s4 { color: #6aab73;}
+.s5 { color: #bababa;}
+.s6 { color: #bcbec4;}
+.s7 { color: #2aacb8;}
+.s8 { color: #56a8f5;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+styles.css</font>
+</center></td></tr></table>
+<pre><span class="s0">@import </span><span class="s2">url</span><span class="s3">(</span><span class="s4">'https://fonts.googleapis.com/css?family=Star+Jedi&amp;display=swap'</span><span class="s3">);</span>
+
+<span class="s2">body </span><span class="s3">{</span>
+    <span class="s5">margin</span><span class="s6">: </span><span class="s7">0</span><span class="s3">;</span>
+    <span class="s5">padding</span><span class="s6">: </span><span class="s7">0</span><span class="s3">;</span>
+    <span class="s5">overflow</span><span class="s6">: </span><span class="s4">auto</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s3">.</span><span class="s2">stars </span><span class="s3">{</span>
+    <span class="s5">position</span><span class="s6">: </span><span class="s4">fixed</span><span class="s3">;</span>
+    <span class="s5">top</span><span class="s6">: </span><span class="s7">0</span><span class="s3">;</span>
+    <span class="s5">left</span><span class="s6">: </span><span class="s7">0</span><span class="s3">;</span>
+    <span class="s5">width</span><span class="s6">: </span><span class="s7">100</span><span class="s3">%;</span>
+    <span class="s5">height</span><span class="s6">: </span><span class="s7">100</span><span class="s3">%;</span>
+    <span class="s5">background</span><span class="s6">: </span><span class="s2">linear-gradient</span><span class="s3">(</span><span class="s4">black</span><span class="s3">, </span><span class="s8">#040a18</span><span class="s3">, </span><span class="s4">black</span><span class="s3">);</span>
+    <span class="s5">z-index</span><span class="s6">: </span><span class="s3">-</span><span class="s7">1</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s3">.</span><span class="s2">star </span><span class="s3">{</span>
+    <span class="s5">position</span><span class="s6">: </span><span class="s4">absolute</span><span class="s3">;</span>
+    <span class="s5">background</span><span class="s6">: </span><span class="s4">white</span><span class="s3">;</span>
+    <span class="s5">width</span><span class="s6">: </span><span class="s7">1</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s5">height</span><span class="s6">: </span><span class="s7">1</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s5">animation</span><span class="s6">: </span><span class="s2">twinkle </span><span class="s7">10</span><span class="s4">s infinite ease-in-out</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s0">@keyframes </span><span class="s2">twinkle </span><span class="s3">{</span>
+    <span class="s2">0% </span><span class="s3">{</span>
+        <span class="s5">opacity</span><span class="s6">: </span><span class="s7">0</span><span class="s3">;</span>
+    <span class="s3">}</span>
+    <span class="s2">20% </span><span class="s3">{</span>
+        <span class="s5">opacity</span><span class="s6">: </span><span class="s7">1</span><span class="s3">;</span>
+    <span class="s3">}</span>
+    <span class="s2">80% </span><span class="s3">{</span>
+        <span class="s5">opacity</span><span class="s6">: </span><span class="s7">1</span><span class="s3">;</span>
+    <span class="s3">}</span>
+    <span class="s2">100% </span><span class="s3">{</span>
+        <span class="s5">opacity</span><span class="s6">: </span><span class="s7">0</span><span class="s3">;</span>
+    <span class="s3">}</span>
+<span class="s3">}</span>
+
+<span class="s2">#contactBar </span><span class="s3">{</span>
+    <span class="s5">position</span><span class="s6">: </span><span class="s4">fixed</span><span class="s3">;</span>
+    <span class="s5">bottom</span><span class="s6">: </span><span class="s7">0</span><span class="s3">;</span>
+    <span class="s5">width</span><span class="s6">: </span><span class="s7">100</span><span class="s3">%;</span>
+    <span class="s5">background</span><span class="s6">: </span><span class="s8">#343a40</span><span class="s3">;</span>
+    <span class="s5">z-index</span><span class="s6">: </span><span class="s7">2</span><span class="s3">;</span>
+    <span class="s5">display</span><span class="s6">: </span><span class="s4">none</span><span class="s3">;</span>
+    <span class="s5">opacity</span><span class="s6">: </span><span class="s7">0</span><span class="s3">;</span>
+    <span class="s5">transform</span><span class="s6">: </span><span class="s2">translateY</span><span class="s3">(</span><span class="s7">50</span><span class="s4">px</span><span class="s3">);</span>
+    <span class="s5">animation</span><span class="s6">: </span><span class="s2">fade-in </span><span class="s7">2</span><span class="s4">s ease forwards</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s0">@keyframes </span><span class="s2">fade-in </span><span class="s3">{</span>
+    <span class="s2">0% </span><span class="s3">{</span>
+        <span class="s5">opacity</span><span class="s6">: </span><span class="s7">0</span><span class="s3">;</span>
+        <span class="s5">transform</span><span class="s6">: </span><span class="s2">translateY</span><span class="s3">(</span><span class="s7">50</span><span class="s4">px</span><span class="s3">);</span>
+    <span class="s3">}</span>
+    <span class="s2">100% </span><span class="s3">{</span>
+        <span class="s5">opacity</span><span class="s6">: </span><span class="s7">1</span><span class="s3">;</span>
+        <span class="s5">transform</span><span class="s6">: </span><span class="s2">translateY</span><span class="s3">(</span><span class="s7">0</span><span class="s3">);</span>
+    <span class="s3">}</span>
+<span class="s3">}</span>
+
+<span class="s0">@keyframes </span><span class="s2">fade-out </span><span class="s3">{</span>
+    <span class="s2">0% </span><span class="s3">{</span>
+        <span class="s5">opacity</span><span class="s6">: </span><span class="s7">1</span><span class="s3">;</span>
+        <span class="s5">transform</span><span class="s6">: </span><span class="s2">translateY</span><span class="s3">(</span><span class="s7">0</span><span class="s3">);</span>
+    <span class="s3">}</span>
+    <span class="s2">100% </span><span class="s3">{</span>
+        <span class="s5">opacity</span><span class="s6">: </span><span class="s7">0</span><span class="s3">;</span>
+        <span class="s5">transform</span><span class="s6">: </span><span class="s2">translateY</span><span class="s3">(</span><span class="s7">50</span><span class="s4">px</span><span class="s3">);</span>
+    <span class="s3">}</span>
+<span class="s3">}</span>
+
+<span class="s2">#contactBar</span><span class="s3">.</span><span class="s2">fade-out </span><span class="s3">{</span>
+    <span class="s5">animation</span><span class="s6">: </span><span class="s2">fade-out </span><span class="s7">1.5</span><span class="s4">s ease forwards</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s3">.</span><span class="s2">contact-form </span><span class="s3">{</span>
+    <span class="s5">position</span><span class="s6">: </span><span class="s4">absolute</span><span class="s3">;</span>
+    <span class="s5">top</span><span class="s6">: </span><span class="s7">80</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s5">right</span><span class="s6">: </span><span class="s7">10</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s2">#userContactForm </span><span class="s3">{</span>
+    <span class="s5">display</span><span class="s6">: </span><span class="s4">flex</span><span class="s3">;</span>
+    <span class="s5">flex-direction</span><span class="s6">: </span><span class="s4">column</span><span class="s3">;</span>
+    <span class="s5">align-items</span><span class="s6">: </span><span class="s4">flex-end</span><span class="s3">;</span>
+    <span class="s5">gap</span><span class="s6">: </span><span class="s7">10</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s2">#closeContactFormButton </span><span class="s3">{</span>
+    <span class="s5">position</span><span class="s6">: </span><span class="s4">absolute</span><span class="s3">;</span>
+    <span class="s5">top</span><span class="s6">: </span><span class="s7">96</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s5">right</span><span class="s6">: </span><span class="s7">167</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s5">width</span><span class="s6">: </span><span class="s7">40</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s3">.</span><span class="s2">form-control </span><span class="s3">{</span>
+    <span class="s5">width</span><span class="s6">: </span><span class="s7">150</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s2">#myNavbar a</span><span class="s3">.</span><span class="s2">navbar-brand</span><span class="s3">,</span>
+<span class="s2">#myNavbar </span><span class="s3">.</span><span class="s2">navbar-nav </span><span class="s3">.</span><span class="s2">nav-link </span><span class="s3">{</span>
+    <span class="s5">background-image</span><span class="s6">: </span><span class="s2">linear-gradient</span><span class="s3">(</span><span class="s7">45</span><span class="s4">deg</span><span class="s3">, </span><span class="s8">#d9be80</span><span class="s3">, </span><span class="s8">#FF8E33</span><span class="s3">);</span>
+    <span class="s5">-webkit-background-clip</span><span class="s6">: </span><span class="s4">text</span><span class="s3">;</span>
+    <span class="s5">background-clip</span><span class="s6">: </span><span class="s4">text</span><span class="s3">;</span>
+    <span class="s5">color</span><span class="s6">: </span><span class="s4">transparent</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s2">#myNavbar </span><span class="s3">.</span><span class="s2">navbar-brand img </span><span class="s3">{</span>
+    <span class="s5">margin-right</span><span class="s6">: </span><span class="s7">20</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s3">.</span><span class="s2">welcome-text </span><span class="s3">{</span>
+    <span class="s5">margin-left</span><span class="s6">: </span><span class="s4">auto</span><span class="s3">;</span>
+    <span class="s5">margin-right</span><span class="s6">: </span><span class="s4">auto</span><span class="s3">;</span>
+    <span class="s5">text-align</span><span class="s6">: </span><span class="s4">left</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s3">.</span><span class="s2">gold-gradient </span><span class="s3">{</span>
+    <span class="s5">background</span><span class="s6">: </span><span class="s2">linear-gradient</span><span class="s3">(</span><span class="s8">#FFD700</span><span class="s3">, </span><span class="s8">#5e4e1a</span><span class="s3">, </span><span class="s4">transparent</span><span class="s3">);</span>
+    <span class="s5">-webkit-background-clip</span><span class="s6">: </span><span class="s4">text</span><span class="s3">;</span>
+    <span class="s5">color</span><span class="s6">: </span><span class="s4">transparent</span><span class="s3">;</span>
+    <span class="s5">padding</span><span class="s6">: </span><span class="s7">20</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s5">border-radius</span><span class="s6">: </span><span class="s7">15</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s5">width</span><span class="s6">: </span><span class="s7">100</span><span class="s3">%;</span>
+    <span class="s5">max-width</span><span class="s6">: </span><span class="s7">1200</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s5">margin</span><span class="s6">: </span><span class="s7">0 </span><span class="s4">auto</span><span class="s3">;</span>
+    <span class="s5">position</span><span class="s6">: </span><span class="s4">relative</span><span class="s3">;</span>
+    <span class="s5">font-family</span><span class="s6">: </span><span class="s4">'Georgia'</span><span class="s3">, </span><span class="s4">sans-serif</span><span class="s3">;</span>
+    <span class="s5">font-size</span><span class="s6">: </span><span class="s2">calc</span><span class="s3">(</span><span class="s7">1</span><span class="s4">vw </span><span class="s3">+ </span><span class="s7">1</span><span class="s4">vh </span><span class="s3">+ </span><span class="s7">.5</span><span class="s4">vmin</span><span class="s3">);</span>
+    <span class="s5">text-align</span><span class="s6">: </span><span class="s4">center</span><span class="s3">;</span>
+    <span class="s5">top</span><span class="s6">: </span><span class="s7">250</span><span class="s4">px</span><span class="s3">;</span>
+
+    <span class="s0">@media </span><span class="s3">(</span><span class="s5">max-width</span><span class="s6">: </span><span class="s7">1200</span><span class="s4">px</span><span class="s3">) {</span>
+        <span class="s5">width</span><span class="s6">: </span><span class="s7">80</span><span class="s3">%;</span>
+    <span class="s3">}</span>
+
+    <span class="s0">@media </span><span class="s3">(</span><span class="s5">max-width</span><span class="s6">: </span><span class="s7">768</span><span class="s4">px</span><span class="s3">) {</span>
+        <span class="s5">width</span><span class="s6">: </span><span class="s7">90</span><span class="s3">%;</span>
+        <span class="s5">font-size</span><span class="s6">: </span><span class="s7">4</span><span class="s4">vw</span><span class="s3">;</span>
+    <span class="s3">}</span>
+
+    <span class="s0">@media </span><span class="s3">(</span><span class="s5">max-width</span><span class="s6">: </span><span class="s7">480</span><span class="s4">px</span><span class="s3">) {</span>
+        <span class="s5">width</span><span class="s6">: </span><span class="s7">95</span><span class="s3">%;</span>
+        <span class="s5">font-size</span><span class="s6">: </span><span class="s7">5</span><span class="s4">vw</span><span class="s3">;</span>
+    <span class="s3">}</span>
+<span class="s3">}</span>
+
+<span class="s0">@font-face </span><span class="s3">{</span>
+    <span class="s5">font-family</span><span class="s6">: </span><span class="s4">'StarJedi'</span><span class="s3">;</span>
+    <span class="s5">src</span><span class="s6">: </span><span class="s2">url</span><span class="s3">(</span><span class="s4">'Starjedi.ttf'</span><span class="s3">) </span><span class="s2">format</span><span class="s3">(</span><span class="s4">'truetype'</span><span class="s3">);</span>
+<span class="s3">}</span>
+
+<span class="s3">.</span><span class="s2">yoda-container </span><span class="s3">{</span>
+    <span class="s5">left</span><span class="s6">: </span><span class="s7">100</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s5">top</span><span class="s6">: </span><span class="s7">500</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s5">position</span><span class="s6">: </span><span class="s4">relative</span><span class="s3">;</span>
+    <span class="s5">width</span><span class="s6">: </span><span class="s7">1700</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s5">height</span><span class="s6">: </span><span class="s7">600</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s5">overflow</span><span class="s6">: </span><span class="s4">hidden</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s3">.</span><span class="s2">yoda-container img </span><span class="s3">{</span>
+    <span class="s5">width</span><span class="s6">: </span><span class="s7">100</span><span class="s3">%;</span>
+    <span class="s5">height</span><span class="s6">: </span><span class="s7">100</span><span class="s3">%;</span>
+    <span class="s5">object-fit</span><span class="s6">: </span><span class="s4">cover</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s2">#rbt img </span><span class="s3">{</span>
+    <span class="s5">position</span><span class="s6">: </span><span class="s4">relative</span><span class="s3">;</span>
+    <span class="s5">top</span><span class="s6">: </span><span class="s7">600</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s5">left</span><span class="s6">: </span><span class="s7">1100</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+</pre>
+</body>
+</html>

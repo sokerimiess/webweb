@@ -1,0 +1,136 @@
+<html>
+<head>
+<title>script.js</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #2aacb8;}
+.s4 { color: #7a7e85;}
+.s5 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+script.js</font>
+</center></td></tr></table>
+<pre><span class="s0">let </span><span class="s1">contactBarDisplayed </span><span class="s2">= </span><span class="s0">false</span><span class="s2">;</span>
+<span class="s0">let </span><span class="s1">lastScrollPosition </span><span class="s2">= </span><span class="s3">0</span><span class="s2">;</span>
+<span class="s0">let </span><span class="s1">isContactFormOpen </span><span class="s2">= </span><span class="s0">false</span><span class="s2">;</span>
+<span class="s0">const </span><span class="s1">userDataArray </span><span class="s2">= [];</span>
+
+<span class="s0">function </span><span class="s1">smoothScrollDown</span><span class="s2">() {</span>
+    <span class="s0">const </span><span class="s1">scrollStep </span><span class="s2">= </span><span class="s3">1</span><span class="s2">; </span><span class="s4">// Шаг прокрутки (чем меньше, тем плавнее)</span>
+    <span class="s0">const </span><span class="s1">scrollInterval </span><span class="s2">= </span><span class="s3">40</span><span class="s2">; </span><span class="s4">// Интервал времени в миллисекундах</span>
+
+    <span class="s0">const </span><span class="s1">scrollDown </span><span class="s2">= () =&gt; {</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">window</span><span class="s2">.</span><span class="s1">scrollY </span><span class="s2">&lt; </span><span class="s1">document</span><span class="s2">.</span><span class="s1">body</span><span class="s2">.</span><span class="s1">clientHeight </span><span class="s2">- </span><span class="s1">window</span><span class="s2">.</span><span class="s1">innerHeight</span><span class="s2">) {</span>
+            <span class="s1">window</span><span class="s2">.</span><span class="s1">scrollBy</span><span class="s2">(</span><span class="s3">0</span><span class="s2">, </span><span class="s1">scrollStep</span><span class="s2">);</span>
+            <span class="s1">setTimeout</span><span class="s2">(</span><span class="s1">scrollDown</span><span class="s2">, </span><span class="s1">scrollInterval</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">};</span>
+
+    <span class="s1">scrollDown</span><span class="s2">();</span>
+<span class="s2">}</span>
+
+<span class="s4">// Вызывать функцию для плавной прокрутки вниз, например, при загрузке страницы</span>
+<span class="s1">smoothScrollDown</span><span class="s2">();</span>
+
+
+<span class="s0">function </span><span class="s1">createStars</span><span class="s2">() {</span>
+    <span class="s0">const </span><span class="s1">stars </span><span class="s2">= </span><span class="s1">document</span><span class="s2">.</span><span class="s1">querySelector</span><span class="s2">(</span><span class="s5">'.stars'</span><span class="s2">);</span>
+    <span class="s0">const </span><span class="s1">numStars </span><span class="s2">= </span><span class="s3">100</span><span class="s2">;</span>
+
+    <span class="s0">for </span><span class="s2">(</span><span class="s0">let </span><span class="s1">i </span><span class="s2">= </span><span class="s3">0</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt; </span><span class="s1">numStars</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++) {</span>
+        <span class="s0">const </span><span class="s1">star </span><span class="s2">= </span><span class="s1">document</span><span class="s2">.</span><span class="s1">createElement</span><span class="s2">(</span><span class="s5">'div'</span><span class="s2">);</span>
+        <span class="s1">star</span><span class="s2">.</span><span class="s1">classList</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s5">'star'</span><span class="s2">);</span>
+        <span class="s1">star</span><span class="s2">.</span><span class="s1">style</span><span class="s2">.</span><span class="s1">left </span><span class="s2">= </span><span class="s5">`</span><span class="s1">$</span><span class="s2">{</span><span class="s1">Math</span><span class="s2">.</span><span class="s1">random</span><span class="s2">() * </span><span class="s3">100</span><span class="s2">}</span><span class="s5">vw`</span><span class="s2">;</span>
+        <span class="s1">star</span><span class="s2">.</span><span class="s1">style</span><span class="s2">.</span><span class="s1">top </span><span class="s2">= </span><span class="s5">`</span><span class="s1">$</span><span class="s2">{</span><span class="s1">Math</span><span class="s2">.</span><span class="s1">random</span><span class="s2">() * </span><span class="s3">100</span><span class="s2">}</span><span class="s5">vh`</span><span class="s2">;</span>
+        <span class="s1">star</span><span class="s2">.</span><span class="s1">style</span><span class="s2">.</span><span class="s1">animationDuration </span><span class="s2">= </span><span class="s5">`</span><span class="s1">$</span><span class="s2">{</span><span class="s3">1 </span><span class="s2">+ </span><span class="s1">Math</span><span class="s2">.</span><span class="s1">random</span><span class="s2">() * </span><span class="s3">2</span><span class="s2">}</span><span class="s5">s`</span><span class="s2">;</span>
+        <span class="s1">star</span><span class="s2">.</span><span class="s1">style</span><span class="s2">.</span><span class="s1">animationDelay </span><span class="s2">= </span><span class="s5">`</span><span class="s1">$</span><span class="s2">{-</span><span class="s1">Math</span><span class="s2">.</span><span class="s1">random</span><span class="s2">() * </span><span class="s3">2</span><span class="s2">}</span><span class="s5">s`</span><span class="s2">;</span>
+
+        <span class="s1">stars</span><span class="s2">.</span><span class="s1">appendChild</span><span class="s2">(</span><span class="s1">star</span><span class="s2">);</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+
+<span class="s1">createStars</span><span class="s2">();</span>
+
+<span class="s1">window</span><span class="s2">.</span><span class="s1">addEventListener</span><span class="s2">(</span><span class="s5">'scroll'</span><span class="s2">, </span><span class="s0">function </span><span class="s2">() {</span>
+    <span class="s0">const </span><span class="s1">scrollY </span><span class="s2">= </span><span class="s1">window</span><span class="s2">.</span><span class="s1">scrollY</span><span class="s2">;</span>
+    <span class="s0">const </span><span class="s1">windowHeight </span><span class="s2">= </span><span class="s1">window</span><span class="s2">.</span><span class="s1">innerHeight</span><span class="s2">;</span>
+    <span class="s0">const </span><span class="s1">contentHeight </span><span class="s2">= </span><span class="s1">document</span><span class="s2">.</span><span class="s1">querySelector</span><span class="s2">(</span><span class="s5">'main'</span><span class="s2">).</span><span class="s1">offsetHeight</span><span class="s2">;</span>
+    <span class="s0">const </span><span class="s1">contactBar </span><span class="s2">= </span><span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s5">'contactBar'</span><span class="s2">);</span>
+    <span class="s0">const </span><span class="s1">isScrollingDown </span><span class="s2">= </span><span class="s1">scrollY </span><span class="s2">&gt; </span><span class="s1">lastScrollPosition</span><span class="s2">;</span>
+
+    <span class="s0">if </span><span class="s2">(</span><span class="s1">isScrollingDown </span><span class="s2">&amp;&amp; </span><span class="s1">scrollY </span><span class="s2">+ </span><span class="s1">windowHeight </span><span class="s2">&gt;= </span><span class="s1">contentHeight </span><span class="s2">- </span><span class="s1">windowHeight</span><span class="s2">) {</span>
+        <span class="s0">if </span><span class="s2">(!</span><span class="s1">contactBarDisplayed</span><span class="s2">) {</span>
+            <span class="s1">contactBar</span><span class="s2">.</span><span class="s1">style</span><span class="s2">.</span><span class="s1">display </span><span class="s2">= </span><span class="s5">'block'</span><span class="s2">;</span>
+            <span class="s1">contactBar</span><span class="s2">.</span><span class="s1">classList</span><span class="s2">.</span><span class="s1">remove</span><span class="s2">(</span><span class="s5">'fade-out'</span><span class="s2">);</span>
+            <span class="s1">contactBarDisplayed </span><span class="s2">= </span><span class="s0">true</span><span class="s2">;</span>
+        <span class="s2">}</span>
+    <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">contactBarDisplayed</span><span class="s2">) {</span>
+            <span class="s1">contactBar</span><span class="s2">.</span><span class="s1">classList</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s5">'fade-out'</span><span class="s2">);</span>
+            <span class="s1">contactBarDisplayed </span><span class="s2">= </span><span class="s0">false</span><span class="s2">;</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s1">lastScrollPosition </span><span class="s2">= </span><span class="s1">scrollY</span><span class="s2">;</span>
+<span class="s2">});</span>
+
+<span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s5">'showContactFormButton'</span><span class="s2">).</span><span class="s1">addEventListener</span><span class="s2">(</span><span class="s5">'click'</span><span class="s2">, </span><span class="s0">function </span><span class="s2">() {</span>
+    <span class="s0">const </span><span class="s1">contactFormContainer </span><span class="s2">= </span><span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s5">'contactFormContainer'</span><span class="s2">);</span>
+    <span class="s1">contactFormContainer</span><span class="s2">.</span><span class="s1">style</span><span class="s2">.</span><span class="s1">display </span><span class="s2">= </span><span class="s5">'block'</span><span class="s2">;</span>
+    <span class="s1">isContactFormOpen </span><span class="s2">= </span><span class="s0">true</span><span class="s2">;</span>
+<span class="s2">});</span>
+
+<span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s5">'closeContactFormButton'</span><span class="s2">).</span><span class="s1">addEventListener</span><span class="s2">(</span><span class="s5">'click'</span><span class="s2">, </span><span class="s0">function </span><span class="s2">() {</span>
+    <span class="s0">const </span><span class="s1">contactFormContainer </span><span class="s2">= </span><span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s5">'contactFormContainer'</span><span class="s2">);</span>
+    <span class="s1">contactFormContainer</span><span class="s2">.</span><span class="s1">style</span><span class="s2">.</span><span class="s1">display </span><span class="s2">= </span><span class="s5">'none'</span><span class="s2">;</span>
+    <span class="s1">clearForm</span><span class="s2">();</span>
+    <span class="s1">isContactFormOpen </span><span class="s2">= </span><span class="s0">false</span><span class="s2">;</span>
+<span class="s2">});</span>
+
+<span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s5">'userContactForm'</span><span class="s2">).</span><span class="s1">addEventListener</span><span class="s2">(</span><span class="s5">'submit'</span><span class="s2">, </span><span class="s0">function </span><span class="s2">(</span><span class="s1">event</span><span class="s2">) {</span>
+    <span class="s1">event</span><span class="s2">.</span><span class="s1">preventDefault</span><span class="s2">();</span>
+    <span class="s0">const </span><span class="s1">name </span><span class="s2">= </span><span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s5">'name'</span><span class="s2">).</span><span class="s1">value</span><span class="s2">;</span>
+    <span class="s0">const </span><span class="s1">email </span><span class="s2">= </span><span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s5">'email'</span><span class="s2">).</span><span class="s1">value</span><span class="s2">;</span>
+
+    <span class="s1">addUserData</span><span class="s2">(</span><span class="s1">name</span><span class="s2">, </span><span class="s1">email</span><span class="s2">);</span>
+
+    <span class="s0">const </span><span class="s1">notificationContent </span><span class="s2">= </span><span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s5">'notificationContent'</span><span class="s2">);</span>
+    <span class="s1">notificationContent</span><span class="s2">.</span><span class="s1">innerHTML </span><span class="s2">= </span><span class="s5">`Thank you, </span><span class="s1">$</span><span class="s2">{</span><span class="s1">name</span><span class="s2">}</span><span class="s5">! We will contact you at </span><span class="s1">$</span><span class="s2">{</span><span class="s1">email</span><span class="s2">}</span><span class="s5">.`</span><span class="s2">;</span>
+
+    <span class="s1">notificationContent</span><span class="s2">.</span><span class="s1">style</span><span class="s2">.</span><span class="s1">display </span><span class="s2">= </span><span class="s5">'block'</span><span class="s2">;</span>
+
+    <span class="s1">clearForm</span><span class="s2">();</span>
+
+    <span class="s0">const </span><span class="s1">contactFormContainer </span><span class="s2">= </span><span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s5">'contactFormContainer'</span><span class="s2">);</span>
+    <span class="s1">contactFormContainer</span><span class="s2">.</span><span class="s1">style</span><span class="s2">.</span><span class="s1">display </span><span class="s2">= </span><span class="s5">'none'</span><span class="s2">;</span>
+
+    <span class="s1">setTimeout</span><span class="s2">(</span><span class="s0">function </span><span class="s2">() {</span>
+        <span class="s1">notificationContent</span><span class="s2">.</span><span class="s1">style</span><span class="s2">.</span><span class="s1">display </span><span class="s2">= </span><span class="s5">'none'</span><span class="s2">;</span>
+    <span class="s2">}, </span><span class="s3">5000</span><span class="s2">);</span>
+<span class="s2">});</span>
+
+<span class="s0">function </span><span class="s1">clearForm</span><span class="s2">() {</span>
+    <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s5">'userContactForm'</span><span class="s2">).</span><span class="s1">reset</span><span class="s2">();</span>
+<span class="s2">}</span>
+
+<span class="s0">function </span><span class="s1">addUserData</span><span class="s2">(</span><span class="s1">name</span><span class="s2">, </span><span class="s1">email</span><span class="s2">) {</span>
+    <span class="s1">userDataArray</span><span class="s2">.</span><span class="s1">push</span><span class="s2">({ </span><span class="s1">name</span><span class="s2">, </span><span class="s1">email </span><span class="s2">});</span>
+<span class="s2">}</span>
+
+<span class="s0">function </span><span class="s1">filterUserDataByName</span><span class="s2">(</span><span class="s1">name</span><span class="s2">) {</span>
+    <span class="s0">return </span><span class="s1">userDataArray</span><span class="s2">.</span><span class="s1">filter</span><span class="s2">(</span><span class="s1">user </span><span class="s2">=&gt; </span><span class="s1">user</span><span class="s2">.</span><span class="s1">name</span><span class="s2">.</span><span class="s1">toLowerCase</span><span class="s2">() === </span><span class="s1">name</span><span class="s2">.</span><span class="s1">toLowerCase</span><span class="s2">());</span>
+<span class="s2">}</span>
+
+<span class="s1">setInterval</span><span class="s2">(</span><span class="s0">function </span><span class="s2">() {</span>
+    <span class="s1">console</span><span class="s2">.</span><span class="s1">log</span><span class="s2">(</span><span class="s5">&quot;Data saved:&quot;</span><span class="s2">, </span><span class="s1">userDataArray</span><span class="s2">);</span>
+<span class="s2">}, </span><span class="s3">5000</span><span class="s2">);</span>
+</pre>
+</body>
+</html>

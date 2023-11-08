@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Star+Jedi&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Подключение Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <title>Звёздный фон</title>
+    <style>
+        /* Стили для фиксированного позиционирования контейнера с формой */
+        #contactFormContainer {
+            position: fixed;
+            top: 20%;
+            left: 90%;
+            transform: translate(-50%, -50%);
+            background-color: #0b162f;
+            padding: 20px;
+            border: 1px solid #0f112c;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar fixed-top" id="myNavbar" style="background-color: transparent; transition: background-color 0.3s; font-family: 'Georgia', serif; padding: 20px; height: 100px;">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">STAR WARS</a>
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="../forces/index.html" style="color: #c99248;">Forces</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="../test/index.html" style="color: #c99248;">Test</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../quiz/index.html" style="color: #c99248;">Quiz</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../rewards/index.html" style="color: #c99248;">Rewards</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../buy/buy.html" style="color: #c99248;">Tickets</a>
+            </li>
+        </ul>
+        <button id="showContactFormButton" class="btn btn-light" style="background: url('../tools/Frame 3.svg') no-repeat center center; background-size: 50% auto; border: none; color: transparent; padding: 15px 120px; font-size: 18px;">Sign-up</button>
+    </div>
+</nav>
+
+<div class="text-container scroll-fade-in">
+    <div class="text-container">
+        <div id="movable-text" class="gold-gradient">
+        <p><h1>Welcome to the world of Star Wars! In a galaxy far, far away, you'll encounter epic adventures,
+        iconic characters, and a timeless battle between the forces of good and evil.</h1> <p>
+        <h4><i>Whether you're a Jedi Knight, a loyal member of the Rebel Alliance, or a cunning Sith Lord,
+            the Star Wars universe offers a rich tapestry of stories and possibilities.
+            From the sprawling landscapes of Tatooine to the towering skyscrapers of Coruscant,
+            get ready to embark on an intergalactic journey filled with lightsabers, blasters, and the Force.
+            May the Force be with you as you explore this legendary universe!</i></h4></p>
+        </div>
+    </div>
+</div>
+
+<div class="gold-line"></div>
+
+
+<div class="yoda-container scroll-fade-in" id="yoda">
+    <img src="../tools/yoda.jpg" alt="">
+</div>
+
+<div class="robot scroll-fade-in" id="rbt">
+    <img src="../tools/Screenshot_13.png" alt="">
+</div>
+
+<div class="custom-text">
+    In this universe, the boundaries of good and evil are blurring. You are free to be and do what you really want yourself. Feel the excitement of aerial combat, explore mysterious planets and meet amazing aliens. Are you ready to become a part of this boundless saga where the fate of the galaxy lies in your hands? Hold a lightsaber and go into battle, because "Star Wars" is waiting for you!
+</div>
+
+<div class="jedis scroll-fade-in" id="fon">
+    <img src="../tools/1234.jpg" alt="">
+</div>
+
+<div class="contact-form">
+    <div id="contactFormContainer" style="display: none; background-color: #310d0d;">
+        <button id="closeContactFormButton" class="btn-close" style="position: absolute; top: 140px; right: 130px; color: white;">X</button>
+        <form id="userContactForm" class="form-inline">
+            <label for="name"></label><input type="text" id="name" name="name" class="form-control mr-sm-2" placeholder="Name" required>
+            <label for="email"></label><input type="email" id="email" name="email" class="form-control mr-sm-2" placeholder="Email" required>
+            <button type="submit" class="btn" style="color: #ffffff;">Submit</button>
+        </form>
+        <div id="messageContainer" class="mt-2"></div>
+    </div>
+</div>
+
+
+
+<div class="message-notification">
+    <div id="notificationContent" style="display: none;"></div>
+</div>
+
+<div class="quiz scroll-fade-in">
+    WANT JOIN THE UNIVERSE?<p>
+</p>take quiz and find your character <p> </p>
+    <button id="quizbut" class="quizz" style="background: url('../tools/Frame 1.svg') no-repeat center center;
+    background-size: 50% auto; border: none; color: #bebebe; padding: 15px 130px; font-size: 20px;"
+            onclick="window.location.href = '../test/index.html';">QUIZ .</button>
+</div>
+
+<div class="stars"></div>
+
+<main style="min-height: 1000px;"></main>
+
+<nav class="navbar fixed-bottom navbar-light bg-dark" id="contactBar">
+    <div class="container">
+        <span class="navbar-text text-white">
+            Контакты: example@example.com | +7 (123) 456-7890
+            <a href="#" class="text-white ml-3">Facebook</a>
+            <a href="#" class="text-white ml-3">Twitter</a>
+        </span>
+    </div>
+</nav>
+
+<script src="script.js"></script>
+</body>
+</html>

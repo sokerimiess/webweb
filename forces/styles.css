@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css?family=Star+Jedi&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: auto; /* Позволяет странице прокручиваться */
+}
+
+
+.stars {
+    position: fixed; /* Возвращаем fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(black, #0c2457, black);
+    z-index: -1;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    width: 1px; /* Уменьшен размер звёзд */
+    height: 1px; /* Уменьшен размер звёзд */
+    animation: twinkle 10s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Стили для нижнего бара */
+#contactBar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #343a40;
+    z-index: 2;
+    display: none;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fade-in 2s ease forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}
+
+#contactBar.fade-out {
+    animation: fade-out 1.5s ease forwards;
+}
+
+/* Add these styles to your CSS to move the form to the top right */
+.contact-form {
+    position: absolute;
+    top: 80px;
+    right: 10px;
+}
+
+#userContactForm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+#closeContactFormButton {
+    position: absolute;
+    top: 96px;
+    right: 167px;
+    width: 40px;
+}
+
+/* Adjust the size of the input fields */
+.form-control {
+    width: 150px;
+}
+
+#myNavbar a.navbar-brand,
+#myNavbar .navbar-nav .nav-link {
+    background-image: linear-gradient(45deg, #d9be80, #FF8E33);
+    -webkit-background-clip: text; /* For Webkit browsers */
+    background-clip: text;
+    color: transparent;
+}
+
+#myNavbar .navbar-brand img {
+    margin-right: 20px; /* Adjust the margin to control the space between the image and text */
+}
+
+
+.welcome-text {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.gold-gradient {
+    background: linear-gradient(#FFD700, #D4AF37, transparent);
+    -webkit-background-clip: text;
+    color: transparent;
+    padding: 20px;
+    border-radius: 15px;
+    font-family: 'Georgia', sans-serif;
+    font-size: calc(1vw + 1vh + .5vmin); /* Адаптивный размер шрифта */
+    position: relative; /* Используем относительное позиционирование */
+    top: 50px; /* Измените значение top на желаемое */
+    left: 20px; /* Измените значение left на желаемое */
+}
+
+    /* Media queries for responsiveness */
+    @media (max-width: 1200px) {
+        width: 80%; /* Уменьшение ширины текстового блока для средних экранов */
+    }
+
+    @media (max-width: 768px) {
+        width: 90%; /* Уменьшение ширины текстового блока для малых экранов */
+        font-size: 4vw; /* Уменьшение размера шрифта для малых экранов */
+    }
+
+    @media (max-width: 480px) {
+        width: 95%; /* Увеличение ширины текстового блока для очень малых экранов */
+        font-size: 5vw; /* Увеличение размера шрифта для очень малых экранов */
+    }
+
+
+@font-face {
+    font-family: 'StarJedi';
+    src: url('../tools/Starjedi.ttf') format('truetype');
+}
+
+
+
+.flex-container {
+    display: flex;
+    flex-direction: row; /* Меняем направление на горизонтальное */
+    align-items: center;
+    justify-content: space-between; /* Равномерно распределяем пространство между элементами */
+    max-width: 1200px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центрируем контейнер на странице */
+}
+
+.text-container {
+    flex: 1;
+    padding: 1px;
+    max-width: 1200px; /* Максимальная ширина текстового блока */
+}
+
+.yoda-container {
+    max-width: 700px; /* Максимальная ширина контейнера с изображением */
+}
+
+
+#yoda img {
+    max-width: 100%; /* Чтобы изображение масштабировалось по ширине контейнера */
+    height: auto;
+}
+
+#myPagination {
+    position: absolute;
+    bottom: 50px;
+    left: 50px; /* Move the pagination to the right by 100 pixels */
+}

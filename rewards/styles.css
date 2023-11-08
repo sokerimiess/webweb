@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css?family=Star+Jedi&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(black, #040a18, black);
+    z-index: -1;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    width: 1px;
+    height: 1px;
+    animation: twinkle 10s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#contactBar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #343a40;
+    z-index: 2;
+    display: none;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fade-in 2s ease forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}
+
+#contactBar.fade-out {
+    animation: fade-out 1.5s ease forwards;
+}
+
+.contact-form {
+    position: absolute;
+    top: 80px;
+    right: 10px;
+}
+
+#userContactForm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+#closeContactFormButton {
+    position: absolute;
+    top: 96px;
+    right: 167px;
+    width: 40px;
+}
+
+.form-control {
+    width: 150px;
+}
+
+#myNavbar a.navbar-brand,
+#myNavbar .navbar-nav .nav-link {
+    background-image: linear-gradient(45deg, #d9be80, #FF8E33);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+#myNavbar .navbar-brand img {
+    margin-right: 20px;
+}
+
+.welcome-text {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.gold-gradient {
+    background: linear-gradient(#FFD700, #5e4e1a, transparent);
+    -webkit-background-clip: text;
+    color: transparent;
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    font-family: 'Georgia', sans-serif;
+    font-size: calc(1vw + 1vh + .5vmin);
+    text-align: center;
+    top: 250px;
+
+    @media (max-width: 1200px) {
+        width: 80%;
+    }
+
+    @media (max-width: 768px) {
+        width: 90%;
+        font-size: 4vw;
+    }
+
+    @media (max-width: 480px) {
+        width: 95%;
+        font-size: 5vw;
+    }
+}
+
+@font-face {
+    font-family: 'StarJedi';
+    src: url('../tools/Starjedi.ttf') format('truetype');
+}
+
+.yoda-container {
+    left: 100px;
+    top: 500px;
+    position: relative;
+    width: 1700px;
+    height: 600px;
+    overflow: hidden;
+}
+
+.yoda-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#rbt img {
+    position: relative;
+    top: 600px;
+    left: 1100px;
+}
+
+.progress {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+
+.progress-bar {
+    background-color: yellow; /* Желтый цвет для всей строки прогресса */
+}
+
+
+

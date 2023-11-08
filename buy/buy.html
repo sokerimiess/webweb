@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <title>Покупка билета на Star Wars</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="navbar fixed-top" id="myNavbar" style="background-color: transparent; transition: background-color 0.3s; font-family: 'Georgia', serif; padding: 20px; height: 100px;">
+    <div class="container">
+        <a class="navbar-brand" href="../welcome/index.html">STAR WARS</a>
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="../forces/index.html" style="color: #c99248;">Forces</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="../test/index.html" style="color: #c99248;">Test</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../quiz/index.html" style="color: #c99248;">Quiz</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../rewards/index.html" style="color: #c99248;">Rewards</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../buy/buy.html" style="color: #c99248;">Tickets</a>
+            </li>
+        </ul>
+        <button id="showContactFormButton" class="btn btn-light" style="background: url('../tools/Frame 3.svg') no-repeat center center; background-size: 50% auto; border: none; color: transparent; padding: 15px 120px; font-size: 18px;">Sign-up</button>
+    </div>
+</nav>
+
+<div class="stars"></div>
+
+<div id="container">
+    <h1>Купите билет на фильм "Star Wars"</h1>
+    <p>Выберите количество билетов:</p>
+    <input type="number" id="ticketQuantity" min="1" value="1">
+    <button id="selectQuantity">Выбрать количество</button>
+    <div id="seatMap" style="display: none;">
+        <!-- Генерация плана зала с рядами и местами -->
+    </div>
+    <p id="totalPrice" style="display: none;">Сумма к оплате: $0</p>
+    <div id="paymentContainer" style="display: none;">
+        <h2>Введите данные карты</h2>
+        <input type="text" id="cardNumber" placeholder="Номер карты">
+        <input type="text" id="cardName" placeholder="Имя на карте">
+        <input type="number" id="cardCode" placeholder="3-значный код">
+        <button id="purchaseButton">Купить билет</button>
+    </div>
+    <div id="selectedSeats" style="display: none;">
+        <h2>Выбранные места:</h2>
+        <p id="selectedSeatsList"></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
